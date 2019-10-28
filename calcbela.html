@@ -7,48 +7,23 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src "webpage0.js"></script>
-    <title>Hw1 - Bela Martins </title>
+
+    <script src="calcbela.js"></script>
+
+    <title>Calculator by bela</title>
   </head>
   <body class="container">
-
-<h1>Inside scoop to Bela's life</h1>
-
-<div class="row">
-  <div class="col">
-    <img src="DSC_0078.JPG" width="100%">
-  </div>
-  <div class="col">
-    My name is Bela.
-    I was born in Brazil on July 19, 2000
-    <ul>
-      <li> father: Adelson Martins </li>
-      <li> Mother: Zilmara Martins </li>
-      <li> Sister: Barabara Martins </li>
-      <li> Sister: Giovanna Martins </li>
-    </ul>
-  </div>
-</div>
-
-<h1> language</h1>
-  <table class="table table-bordered table-striped">
-
-    <thead>
-      <tr> <th> future travels </th>   <th> favorites </th>
-    </thead>
-
-    <tbody>
-        <tr> <td> Austrilia </td>   <td> Beach </td>   </tr>
-        <tr> <td> Fiji </td>        <td> summer </td>  </tr>
-        <tr> <td> Dubai </td>       <td> Yellow </td>  </tr>
-        <tr> <td> Bali </td>        <td> My country </td>  </tr>
-
-    </tbody>
-
-  </table>
-
-
-
+      <h1>Volume of a square</h1>
+      What is your full name? <input type="text" id="fullName"><br>
+      Enter your radius in inches <input type="number" id="radius"><br>
+      Enter your height in inches <input type="number" id="radius"><br>
+      <button class="btn btn-lg btn-danger" onClick="calcBMI()">
+          Calculate volume of square
+      </button>
+      <br>
+      <hr>
+      <h2>Results</h2>
+      <label id="volume">????</label>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
