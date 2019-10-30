@@ -1,16 +1,16 @@
-function calcBMI(){
+function calcExtra(){
 
   w = weight.value  // read weight from element with id="weight"
 
   h = height.value  // read height from element with id="height"
 
-  bmi = 703*w/(h*h)  // calculate the Body Mass Index
+  extra = w-h // calculate the Body Mass Index
 
-  BMI.innerHTML =    // write into label element with id "BMI"
+  Extra.innerHTML =    // write into label element with id "BMI"
 
-      "You're BMI is "
+      "You're extra is " + extra
 
-      +bmi.toFixed(1)  // round BMI to 1 decimal place
+
 
 
 
