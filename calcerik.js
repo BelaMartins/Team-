@@ -1,4 +1,4 @@
-function calcBMI(){
+function calcExtra(){
 
   w = weight.value  // read weight from element with id="weight"
 
@@ -10,7 +10,7 @@ function calcBMI(){
 
       "You're extra is "
 
-      +bmi.toFixed(1)  // round BMI to 1 decimal place
+      +Extra.toFixed(1)  // round BMI to 1 decimal place
 
 
 
