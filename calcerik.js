@@ -8,9 +8,9 @@ function calcExtra(){
 
   Extra.innerHTML =    // write into label element with id "BMI"
 
-      "You're extra is "
+      "You're extra is " + extra
 
-      
+
 
 
 
