@@ -10,7 +10,7 @@ function calcExtra(){
 
       "You're extra is "
 
-      +Extra.toFixed(1)  // round BMI to 1 decimal place
+      
 
 
 
