@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title> demo1 </title>
+</head>
+<body>
+<h1> Maya's Age Calculator</h1>
+When were you born? <input type="text" id="birthyearTF"><br>
+What year are you interested in? <input type="text" id="yearTF"><br>
+<button onClick="calcAgeYear()">
+  Calculate your age in a given year
+</button>
+<br>
+<label id="resultLabel">
+  You were born in ????
+</label>
+
+<script>
+function calcAgeYear(){
+  let birthyear = birthyearTF.value
+  let year = yearTF.value
+  let age= year-birthyear
+  resultLabel.innerHTML=
+    "Your age was age "+age
+}
+</script>
+</body>
+</html>
