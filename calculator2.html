@@ -12,19 +12,25 @@ Enter interest rate in decimals <input type="number" id="interest"><br>
   <hr>
   <h2>Results</h2>
   <label id="finalAmount">????</label>
-  
+
 <script>
 
 function FinalAmount(){
   d = parseFloat(dollars.value)  // read weight from element with id="dollars"
   i = parseFloat(interest.value)  // read height from element with id="percentage"
-  finalamount = parseFloat((d*i) + d)  // calculate the Interest
-  console.log("hellow world")
-  console.log(finalamount)
+  if(i>1){
+    finalAmount.innerHTML =    // write into label element with id ""
+        "Invalid format"
+  }else{
 
-  finalAmount.innerHTML =    // write into label element with id ""
+    finalamount = parseFloat((d*i) + d)  // calculate the Interest
+    console.log("hellow world")
+    console.log(finalamount)
+
+    finalAmount.innerHTML =    // write into label element with id ""
       "Your Final Amount is "
       +finalamount  // round BMI to 1 decimal place
+  }
 }
 
 </script>
