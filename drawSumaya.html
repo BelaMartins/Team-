@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = 'rgb(0,0,250)';
+        ctx.fillRect(0, 0, 500, 500);
+
+        ctx.fillStyle = 'rgba(200, 0, 0)';
+        ctx.fillRect(10,10, 50, 50)
+
+          ctx.fillStyle = 'rgba(0, 255, 200, 0.5)';
+          ctx.fillRect(30,30, 50, 50);
+
+          //ctx.fillreact(25,25,100,100);
+          //ctx.clearRect(45,45,60,60);
+          //ctx.strokerect(50,50,50,50)
+       ctx.fillStyle = 'rgba(0, 250, 0, 0.9)';
+        ctx.fillRect(160,50, 300, 20);
+          ctx.fillRect(300,50, 30, 200);
+
+          //put a 20 by 20 square in the middle
+          //write the code for a capital T
+
+    ctx.beginPath()
+    ctx.arc(200,200,150,0,2* Math,PI,true)
+    ctx.stroke()
+
+    drawcircle(ctx,200,200,150)
+    drawcircle(ctx,150,150,50)
+    drawcircle(ctx,250,150,50)
+    
+
+
+
+
+          ctx.clearRect(50, 45, 60, 60);
+          ctx.strokeRect(50, 50, 50, 50);
+
+
+
+      }
+    }
+  </script>
+ </head>
+ <body onload="draw();">
+Sumayas <br>
+   <canvas id="canvas" width='500' height="500"></canvas>
+ </body>
+</html>
