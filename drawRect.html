@@ -15,24 +15,30 @@
   }
 
 
-  function drawS(x,y,r){
+  function drawRect(x,y,r){
     // draw a circle centered at (x,y) with radius r
-    ctx.beginPath();
-    ctx.lineTo(331,178)
-    ctx.lineTo(282,174)
-    ctx.lineTo(259,181)
-    ctx.lineTo(247,208)
-    ctx.lineTo(250,238)
-    ctx.lineTo(294,243)
-    ctx.lineTo(322,241)
-    ctx.lineTo(327,268)
-    ctx.lineTo(333,308)
-    ctx.lineTo(312,321)
-    ctx.lineTo(282,325)
-    ctx.lineTo(258,324)
-    ctx.lineTo(237,321)
-    ctx.lineTo(233,310)
-    ctx.stroke()
+    //ctx.beginPath();
+    // Red rectangle
+ctx.beginPath();
+ctx.lineWidth = "6";
+ctx.strokeStyle = "red";
+ctx.rect(5, 5, 290, 140);
+ctx.stroke();
+
+// Green rectangle
+ctx.beginPath();
+ctx.lineWidth = "4";
+ctx.strokeStyle = "green";
+ctx.rect(30, 30, 50, 50);
+ctx.stroke();
+
+// Blue rectangle
+ctx.beginPath();
+ctx.lineWidth = "10";
+ctx.strokeStyle = "blue";
+ctx.rect(50, 50, 150, 80);
+  ctx.stroke();
+
   }
 
   function drawCircles(){
@@ -67,7 +73,7 @@
 
    <button style="background:red; color:white"
            onclick="drawBackground()">Clear</button>
-   <button style="background:red; color:white" onclick="drawS()">draw S</button>
+   <button style="background:red; color:white" onclick="drawRect()">drawRect</button>
 
    <canvas style="float:left;margin-right:30px" id="canvas" width="500" height="500"></canvas>
    <br>
