@@ -26,18 +26,19 @@
 
   function mouseMove(event){
     //console.log(event.buttons)
-    ctx.fillStyle="rgba(0,0,255,0.3)"
+    ctx.fillStyle="rbrb(10,200,255,0.3)"
     const x = event.offsetX
     const y = event.offsetY
     if (event.buttons==1){  // see if the mouse button is pressed
-      ctx.fillRect(x,y,10,30)
+      ctx.fillRect(x,y,20,30)
+      drawRect(x,y)
     }
   }
 
   function drawObject(x,y){
     // put in your own code to draw something interesting
     // at starting here ...
-    drawCircle(x,y,10)
+    drawRect(x,y)
   }
 
 
@@ -57,6 +58,32 @@
     ctx.fill()
   }
 
+  function drawRect(x,y){
+    // draw a circle centered at (x,y) with radius r
+    //ctx.beginPath();
+    // Red rectangle
+ctx.beginPath();
+ctx.lineWidth = "6";
+ctx.strokeStyle = "rgba(255,0,0,0.2)"
+ctx.rect(x+5, y+5, 290, 140);
+ctx.stroke();
+
+// Green rectangle
+ctx.beginPath();
+ctx.lineWidth = "4";
+ctx.strokeStyle = "rgba(0,255,0,0.2)"
+ctx.rect(x+30, y+30, 50, 50);
+ctx.stroke();
+
+// Blue rectangle
+ctx.beginPath();
+ctx.lineWidth = "10";
+ctx.strokeStyle = "rgba(0,0,255,0.2)"
+ctx.rect(x+50, y+50, 150, 80);
+  ctx.stroke();
+
+  }
+
   </script>
  </head>
  <body onload="init();">
@@ -67,7 +94,7 @@
    <button onclick="drawTim(200,200)">Draw</button>
 
    <canvas style="float:left;margin-right:30px"
-           id="canvas" width="500" height="500">
+           id="canvas" width="1500" height="1500">
    </canvas>
 
    <script src="drawgrid.js"></script>
