@@ -10,9 +10,6 @@
       if (canvas.getContext) {
         drawGrid(canvas,false)
         drawGrid(canvas,true)
-        drawCircle(canvas,200,200,50)
-        drawCircle(canvas,200,200,10)
-        drawTim()
       }
     }
 
@@ -30,7 +27,7 @@
     }
 
 
-  function drawTim(){
+  function drawECH(){
     var ctx = canvas.getContext('2d')
     ctx.strokeStyle="blue"
     ctx.lineWidth=5
@@ -82,7 +79,7 @@
  <body onload="draw();">
    <h1>MKTYP6a javascript canvas for 11/11</h1>
    <br>
-   <button onclick="drawTim()">Draw Tim</button>
-   <canvas id="canvas" width="500" height="500"></canvas>
+   <button onclick="drawECH()">Draw ECH</button>
+   <canvas id="canvas" width="1000" height="1000"></canvas>
  </body>
 </html>
