@@ -15,29 +15,14 @@
   }
 
 
-  function drawS(x,y,r){
+  function drawCircle(x,y,r){
     // draw a circle centered at (x,y) with radius r
     ctx.beginPath();
-    ctx.moveTo(336,67)
-    ctx.lineTo(125,58)
-    ctx.lineTo(103,55)
-    ctx.lineTo(84,58)
-    ctx.lineTo(71,68)
-    ctx.lineTo(72,85)
-    ctx.lineTo(82,95)
-    ctx.lineTo(99,95)
-    ctx.lineTo(122,97)
-    ctx.lineTo(123,114)
-    ctx.lineTo(121,133)
-    ctx.lineTo(103,136)
-    ctx.lineTo(83,139)
-    ctx.lineTo(68,137)
-    ctx.lineTo(58,13)
+    ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.stroke()
   }
 
   function drawCircles(){
-
     let x = parseInt(xTF.value)
     let y = parseInt(yTF.value)
     let r = parseInt(rTF.value)
@@ -58,17 +43,26 @@
     ctx.beginPath();
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill()
+
+
+  }
+  function drawBela(){
+    ctx.beginPath()
+    ctx.moveTo(298,110)
+    ctx.lineTo(175,111)
+    ctx.lineTo(253,192)
+    ctx.lineTo(296,113)
+    ctx.stroke()
   }
 
   </script>
  </head>
  <body onload="init();">
-   <h1>drawSumaya interactive javascript canvas for 11/13</h1>
+   <h1>drawTim interactive javascript canvas for 11/13</h1>
    <br>
 
    <button style="background:red; color:white"
            onclick="drawBackground()">Clear</button>
-   <button style="background:red; color:white" onclick="drawS()">draw S</button>
 
    <canvas style="float:left;margin-right:30px" id="canvas" width="500" height="500"></canvas>
    <br>
@@ -83,6 +77,7 @@
 
      n <input type="text" id="nTF" value="10"><br>
      <button onclick="drawCircles()">draw circles</button>
+      <button onclick="drawBela()">draw bela</button>
    </div>
 
    <script src="drawgrid.js"></script>
