@@ -30,7 +30,12 @@
     const x = event.offsetX
     const y = event.offsetY
     if (event.buttons==1){  // see if the mouse button is pressed
-      ctx.fillRect(x,y,15,5)
+      //ctx.fillRect(x,y,15,5)
+      drawCircle(x,y,50,true)
+      drawCircle(x-20,y,15,true)
+      drawCircle(x+20,y,15,true)
+
+
     }
   }
   function drawObject(x,y){
