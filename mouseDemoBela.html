@@ -39,7 +39,17 @@
   function drawObject(x,y){
     // put in your own code to draw something interesting
     // at starting here ...
-    drawCircle(x,y,10)
+    //drawCircle(x,y,10)
+    drawHearts(x,y)
+  }
+  function drawHearts(x,y){
+
+    ctx = canvas.getContext('2d')
+    ctx.fillStyle = "rgba(82,0,3)"
+    ctx.beginPath()
+    ctx.moveTo(x,y)
+    ctx.lineTo(x+200-200, -200+y+200)
+    ctx.stroke()
   }
 
 
