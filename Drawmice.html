@@ -23,30 +23,39 @@
     //
     drawObject(x,y)
   }
+  function drawObject(x,y){
+    canvas.beginPath();
+    canvas.moveTo(50,50);
+    canvas.lineTo(120,150);
+    canvas.lineTo(0,180);
+    canvas.lineTo(120,210);
+    canvas.lineTo(50,310);
+    canvas.lineTo(160,250);
+    canvas.lineTo(190,370);
+    canvas.lineTo(220,250);
+    canvas.lineTo(330,310);
+    canvas.lineTo(260,210);
+    canvas.lineTo(380,180);
+    canvas.closePath();
+    canvas.stroke();
+
+  }
 
   function mouseMove(event){
     //console.log(event.buttons)
-    ctx.fillStyle="rgba(400,300,50,10)"
+    ctx.fillStyle="rgba(0,0,255,0.3)"
     const x = event.offsetX
     const y = event.offsetY
     if (event.buttons==1){  // see if the mouse button is pressed
-      //ctx.fillRect(x,y,15,5)
-      drawCircle(x,y,50,true)
-      drawCircle(x-20,y,15,true)
-      drawCircle(x+20,y,15,true)
-      drawCircle(x,y+40,15,true)
-
-
-
+      ctx.fillRect(x,y,10,30)
     }
   }
-  function drawObject(x,y){
-    // put in your own code to draw something interesting
-    // at starting here ...
-    ctx.fillStyle="rgba(205,0,3)"
-    ctx.fillRect(x,y,10,10)
-    ctx.rect (20, 20, 20, 20)
 
+
+    function draw() {
+ctx.fillRect(25, 25, 100, 100);
+    ctx.clearRect(45, 45, 60, 60);
+    ctx.strokeRect(50, 50, 50, 50);
   }
 
 
@@ -76,7 +85,7 @@
    <button onclick="drawTim(200,200)">Draw</button>
 
    <canvas style="float:left;margin-right:30px"
-           id="canvas" width="1000" height="1000">
+           id="canvas" width="500" height="500">
    </canvas>
 
    <script src="drawgrid.js"></script>
