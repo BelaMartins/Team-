@@ -12,5 +12,4 @@ function calcVolume(){
   Volume.innerHTML =
      "Your Volume is "  + v
 
-  console.log(Volume.value)
   }
