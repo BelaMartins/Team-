@@ -34,19 +34,22 @@ canvas.addEventListener('mousemove',mouseMove,false)
 
   function mouseClick(event){
     console.dir(event)
-    const x = event.offsetX
-    const y = event.offsetY
-    //draw something here ...
-    ctx.fillRect(x,y,20,50)
+    x = event.offsetX
+    y = event.offsetY
+    //
+    drawObject(x,y)
 
   }
 
   function mouseMove(event){
+    //console.log(event.buttons)
+    ctx.fillStyle= "rgba(255,255,0,0.7)"
     const x = event.offsetX
     const y = event.offsetY
-    // put your own code in here!
-    if (event.buttons==1){ // only draw if they are pushing the button!
-        ctx.fillRect(x,y,10,20)
+    if (event.buttons==1){  // see if the mouse button is pressed
+      ctx.fillRect(x,y,10,30)
+      ctx.strokeStyle = "rgba(200,0,255,0.3)"
+      drawCircle(x,y,50)
     }
 }
 
@@ -95,6 +98,7 @@ canvas.addEventListener('mousemove',mouseMove,false)
         ctx.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
         ctx.bezierCurveTo(85, 25, 75, 37, 75, 40);
         ctx.fill();
+
       }
 }//]]>
 
@@ -109,8 +113,7 @@ canvas.addEventListener('mousemove',mouseMove,false)
 
    <div class="row">
      <div class="col">
-       <h1>Calculations</h1>
-       Put some textfields, labels, and buttons here ..
+
        <h1> How much you spend shopping a month </h1>
        What is your full name? <input type="text" id="fullName"><br>
        Enter your dollars spent on clothes each month <input type="number" id="clothes"><br>
@@ -132,7 +135,7 @@ canvas.addEventListener('mousemove',mouseMove,false)
 
      </div>
      <div class="col">
-       <h1>Buttons etc to draw on Canvas</h1>
+       <h1>Buttons to draw a heart </h1>
        <button style="background:red; color:white"
                onclick="drawBackground()">Clear</button>
 
