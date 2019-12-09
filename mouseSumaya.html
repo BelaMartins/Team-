@@ -18,15 +18,18 @@
 
   function mouseClick(event){
     console.dir(event)
-    x = event.offsetX
-    y = event.offsetY
+
     //
-    drawObject(x,y)
+    ctx.fillStyle="rgba(100,200,230,0.4)"
+    const x = event.offsetX
+    const y = event.offsetY
+    fillCircle(x,y,100)
+
   }
 
   function mouseMove(event){
     //console.log(event.buttons)
-    ctx.fillStyle="rbrb(10,200,255,0.3)"
+    ctx.fillStyle="rgba(10,200,100,0.3)"
     const x = event.offsetX
     const y = event.offsetY
     if (event.buttons==1){  // see if the mouse button is pressed
@@ -81,6 +84,7 @@ ctx.lineWidth = "10";
 ctx.strokeStyle = "rgba(0,0,255,0.2)"
 ctx.rect(x+50, y+50, 150, 80);
   ctx.stroke();
+  ctx.lineWidth = "1";
 
   }
 
