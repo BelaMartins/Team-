@@ -10,13 +10,13 @@
   <script type="application/javascript">
 
 
-  function calcBMI(){
-    w = weight.value  // read weight from element with id="weight"
-    h = height.value  // read height from element with id="height"
-    bmi = 703*w/(h*h)  // calculate the Body Mass Index
+  function calcbudget(){
+    c = parseFloat(clothes.value)  // read weight from element with id="weight"
+    s = parseFloat(shoes.value)  // read height from element with id="height"
+ B= (c+s) *12
     BMI.innerHTML =    // write into label element with id "BMI"
-        "You're BMI is "
-        +bmi.toFixed(1)  // round BMI to 1 decimal place
+        "You're bugdet is "
+        +B.toFixed(2)  // round BMI to 1 decimal place
 
 
   }
@@ -34,18 +34,22 @@ canvas.addEventListener('mousemove',mouseMove,false)
 
   function mouseClick(event){
     console.dir(event)
-    const x = event.offsetX
-    const y = event.offsetY
-    //draw something here ...
-    ctx.fillRect(x,y,20,50)
+    x = event.offsetX
+    y = event.offsetY
+    //
+    drawObject(x,y)
+
   }
 
   function mouseMove(event){
+    //console.log(event.buttons)
+    ctx.fillStyle= "rgba(255,255,0,0.7)"
     const x = event.offsetX
     const y = event.offsetY
-    // put your own code in here!
-    if (event.buttons==1){ // only draw if they are pushing the button!
-        ctx.fillRect(x,y,10,20)
+    if (event.buttons==1){  // see if the mouse button is pressed
+      ctx.fillRect(x,y,10,30)
+      ctx.strokeStyle = "rgba(200,0,255,0.3)"
+      drawCircle(x,y,50)
     }
 }
 
@@ -78,61 +82,50 @@ canvas.addEventListener('mousemove',mouseMove,false)
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill()
   }
-  function drawTim(){
-    ctx.strokeStyle="blue"
-    ctx.lineWidth=5
-    ctx.beginPath()
-    ctx.moveTo(198,100)
-    ctx.lineTo(300,100)
-    ctx.lineTo(362,150)
-    ctx.lineTo(364,213)
-    ctx.lineTo(308,263)
-    ctx.lineTo(199,263)
-    ctx.lineTo(136,211)
-    ctx.lineTo(142,141)
-    ctx.lineTo(195,102)
-    ctx.stroke()
-  }
+  function drawHeart()
+  {
+       var canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+
+        // Cubic curves example
+        ctx.beginPath();
+        ctx.moveTo(75, 40);
+        ctx.bezierCurveTo(75, 37, 70, 25, 50, 25);
+        ctx.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
+        ctx.bezierCurveTo(20, 80, 40, 102, 75, 120);
+        ctx.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
+        ctx.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
+        ctx.bezierCurveTo(85, 25, 75, 37, 75, 40);
+        ctx.fill();
+
+      }
+}//]]>
 
   </script>
  </head>
  <body onload="init();">
    <div class="container">
      <div class="jumbotron">
-       <h1>Erickson's Final Project </h1>
-       <p>This Is The My Last Creation! </p>
+       <h1> Bela's Final Project </h1>
+       <p> Welcome :) </p>
      </div>
 
    <div class="row">
      <div class="col">
-       <h1>Calculations</h1>
 
-       <h5>Select</h5>
-                                   What is my favorite candy?
-                                   <select id="s1">
-                                     <option>Snickers</option>
-                                     <option>Twix</option>
-                                     <option>Cadbury</option>
-                                   </select> <br>
-
-                                   Hobbies :<input id="v9" type="checkbox"><br>
-                                                        Eating :<input id="v10" type="checkbox"><br>
-                                                        Physical activities        <input id="v10" type="checkbox"><br>
-
-
-
-       <h1>Area of square</h1>
+       <h1> How much you spend shopping a month </h1>
        What is your full name? <input type="text" id="fullName"><br>
-       Enter your lengh in inches <input type="number" id="Lengh"><br>
-       Enter your width in inches <input type="number" id="width"><br>
+       Enter your dollars spent on clothes each month <input type="number" id="clothes"><br>
+       Enter your dollars spent on shoes  <input type="number" id="shoes"><br>
        <button class="btn btn-lg btn-danger"
-               onClick="calcarea()">
-           Calculate Area
+               onClick="calcbudget()">
+           Calculate annual budget
        </button>
        <br>
        <hr>
        <h2>Results</h2>
-       <label id="Area">????</label>
+       <label id="BMI">????</label>
 
      </div>
      <div class="col">
@@ -142,11 +135,11 @@ canvas.addEventListener('mousemove',mouseMove,false)
 
      </div>
      <div class="col">
-       <h1>Buttons etc to draw on Canvas</h1>
+       <h1>Buttons to draw a heart </h1>
        <button style="background:red; color:white"
                onclick="drawBackground()">Clear</button>
 
-       <br> <button onclick="drawTim()">Draw Tim</button>
+       <br> <button onclick="drawHeart()">Draw Heart</button>
        ....
      </div>
 
